@@ -20,7 +20,7 @@ public class JpaMain {
             Member member = new Member();
             member.setId(1L);
             member.setName("HelloAB");
-            entityManager.persist(member);
+            entityM                  anager.persist(member);
              */
 
             /*
@@ -40,7 +40,7 @@ public class JpaMain {
 
             /*
             JPQL
-             */
+
             List<Member> findAllMembers = entityManager.createQuery("select m from Member as m", Member.class)
                     .setFirstResult(4)
                     .setMaxResults(8)
@@ -49,7 +49,41 @@ public class JpaMain {
             for (Member findAllMember : findAllMembers) {
                 System.out.println("findAllMember = " + findAllMember.getName());
             }
+             */
 
+
+            /*
+            1차 캐쉬 사용 Test
+
+            Member member = new Member();
+            member.setId(101L);
+            member.setName("PERSISTANCE TEST");
+
+            entityManager.persist(member);
+
+            Member findmember = entityManager.find(Member.class, 101L);
+
+            System.out.println("findmember = " + findmember.getId());
+            System.out.println("findmember = " + findmember.getName());
+             */
+
+            /*
+            트랜잭션 사용 쓰기 지연 (Commit 하기 전까지 버퍼? 공간이 있음)
+
+            Member member1 = new Member(2L, "A");
+            Member member2 = new Member(3L, "B");
+
+
+            entityManager.persist(member1);
+            entityManager.persist(member2);
+
+            System.out.println("member2 = " + member2);
+             */
+
+            Member m = entityManager.find(Member.class, 2L);
+            m.setName("A->C");
+
+            System.out.println("+==-=-=-=--==-=-=-=-=");
 
             transaction.commit();
         } catch (Exception e) {
