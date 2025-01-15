@@ -2,8 +2,6 @@ package hellojpa;
 
 import jakarta.persistence.*;
 
-import java.util.List;
-
 public class JpaMain {
     public static void main(String[] args) {
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("hello");
@@ -99,16 +97,21 @@ public class JpaMain {
             entityManager.flush();
              */
 
+            /*
+            동일성 보장
             Member member = entityManager.find(Member.class, 200L);
             member.setName("CCC");
 
             entityManager.close();
 
             Member member2 = entityManager.find(Member.class, 201L);
+             */
 
-            System.out.println("====================");
-
-
+            Member member = new Member();
+            member.setName("TT2");
+            member.setId(112L);
+            member.setRoleType(RoleType.GUEST);
+            entityManager.persist(member);
 
             transaction.commit();
         } catch (Exception e) {

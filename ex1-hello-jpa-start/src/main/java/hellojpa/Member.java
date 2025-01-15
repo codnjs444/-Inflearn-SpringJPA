@@ -1,36 +1,42 @@
 package hellojpa;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import lombok.Data;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.Date;
 
 @Entity
+@Data
+@Table
 public class Member {
 
     @Id
     private Long id;
+
+    @Column(name = "name", unique = true, length = 10, updatable = false)
     private String name;
 
-    public Member() {
-    }
+    private Integer age;
 
-    public Member(Long id, String name) {
-        this.id = id;
-        this.name = name;
-    }
+    @Enumerated(EnumType.STRING)
+    private RoleType roleType;
 
-    public Long getId() {
-        return id;
-    }
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date createdDate;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date lasgModifiedDate;
 
-    public String getName() {
-        return name;
-    }
+    private LocalDate localDate;
 
-    public void setName(String name) {
-        this.name = name;
-    }
+    private LocalDateTime localDateTime;
+
+    @Lob
+    private String description;
+
+    @Transient
+    private int temp;
+
 }
