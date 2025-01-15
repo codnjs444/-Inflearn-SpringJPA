@@ -91,13 +91,24 @@ public class JpaMain {
 
             /*
             플러시
-             */
 
             Member flushTest = new Member(202L, "member200");
             entityManager.persist(flushTest);
 
             System.out.println("--------------------------------");
             entityManager.flush();
+             */
+
+            Member member = entityManager.find(Member.class, 200L);
+            member.setName("CCC");
+
+            entityManager.close();
+
+            Member member2 = entityManager.find(Member.class, 201L);
+
+            System.out.println("====================");
+
+
 
             transaction.commit();
         } catch (Exception e) {
