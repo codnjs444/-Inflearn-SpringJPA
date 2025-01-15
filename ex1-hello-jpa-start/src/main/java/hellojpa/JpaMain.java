@@ -80,10 +80,24 @@ public class JpaMain {
             System.out.println("member2 = " + member2);
              */
 
+            /*
+            영속성 컨텍스트 변경감지
+
             Member m = entityManager.find(Member.class, 2L);
             m.setName("A->C");
 
             System.out.println("+==-=-=-=--==-=-=-=-=");
+             */
+
+            /*
+            플러시
+             */
+
+            Member flushTest = new Member(202L, "member200");
+            entityManager.persist(flushTest);
+
+            System.out.println("--------------------------------");
+            entityManager.flush();
 
             transaction.commit();
         } catch (Exception e) {
