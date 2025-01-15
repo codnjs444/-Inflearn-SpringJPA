@@ -108,12 +108,16 @@ public class JpaMain {
              */
 
             Member member = new Member();
-            member.setName("TT2");
-            member.setId(112L);
-            member.setRoleType(RoleType.GUEST);
+            member.setName("TETET");
+
+            Member member2 = new Member();
+            member2.setName("2");
+
             entityManager.persist(member);
+            entityManager.persist(member2);
 
             transaction.commit();
+
         } catch (Exception e) {
             transaction.rollback();
         }
