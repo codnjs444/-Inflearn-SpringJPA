@@ -176,22 +176,6 @@ public class JpaMain {
             transaction.commit();
              */
 
-
-            Team team = new Team();
-            team.setName("HAHA");
-            entityManager.persist(team);
-
-            Member member = new Member();
-            member.setUserName("LeeChaeWon");
-//            member.changeTeam(team);
-            entityManager.persist(member);
-
-            team.addMember(member);
-
-
-
-            System.out.println("team = " + team.getMembers());
-
             transaction.commit();
 
         } catch (Exception e) {
