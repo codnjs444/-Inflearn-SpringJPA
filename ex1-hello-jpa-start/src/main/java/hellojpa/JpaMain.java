@@ -107,15 +107,41 @@ public class JpaMain {
             Member member2 = entityManager.find(Member.class, 201L);
              */
 
-            Member member = new Member();
-            member.setName("TETET");
 
-            Member member2 = new Member();
-            member2.setName("2");
+            /*
+            JPA Table MAPPING 적용 전 (타입 등록 및 수동 연결)
+
+            Team team = new Team();
+            team.setName("TeamA");
+            entityManager.persist(team);
+
+            Member member = new Member();
+            member.setUserName("member1");
+            member.setTeamId(team.getId());
 
             entityManager.persist(member);
-            entityManager.persist(member2);
 
+            Member findMember = entityManager.find(Member.class, member.getId());
+
+            Long findTeamId = findMember.getTeamId();
+            Team findTeam = entityManager.find(Team.class, findTeamId);
+             */
+
+            Team team = new Team();
+            team.setName("TeamA");
+            entityManager.persist(team);
+
+            Member member = new Member();
+            member.setUserName("member1");
+            member.setTeam(team);
+            entityManager.persist(member);
+
+            Member findMember = entityManager.find(Member.class, member.getId());
+            Team findTeam = findMember.getTeam();
+            System.out.println("----------------------------------------");
+            System.out.println("findTeam = " + findTeam.getName());
+            System.out.println("----------------------------------------");
+            
             transaction.commit();
 
         } catch (Exception e) {
