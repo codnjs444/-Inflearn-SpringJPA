@@ -150,6 +150,8 @@ public class JpaMain {
             System.out.println("----------------------------------------");
              */
 
+            /*
+            양방향 Test
 
             Team team = new Team();
             team.setName("HAHA");
@@ -171,6 +173,25 @@ public class JpaMain {
                 System.out.println("m = " + member1.getUserName());
             }
             System.out.println("----------------------------------------");
+            transaction.commit();
+             */
+
+
+            Team team = new Team();
+            team.setName("HAHA");
+            entityManager.persist(team);
+
+            Member member = new Member();
+            member.setUserName("LeeChaeWon");
+//            member.changeTeam(team);
+            entityManager.persist(member);
+
+            team.addMember(member);
+
+
+
+            System.out.println("team = " + team.getMembers());
+
             transaction.commit();
 
         } catch (Exception e) {
