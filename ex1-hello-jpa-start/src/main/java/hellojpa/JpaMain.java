@@ -1,7 +1,11 @@
 package hellojpa;
 
 import jakarta.persistence.*;
+import lombok.extern.slf4j.Slf4j;
 
+import java.util.List;
+
+@Slf4j
 public class JpaMain {
     public static void main(String[] args) {
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("hello");
@@ -127,6 +131,9 @@ public class JpaMain {
             Team findTeam = entityManager.find(Team.class, findTeamId);
              */
 
+            /*
+            단방향 매핑
+
             Team team = new Team();
             team.setName("TeamA");
             entityManager.persist(team);
@@ -141,7 +148,29 @@ public class JpaMain {
             System.out.println("----------------------------------------");
             System.out.println("findTeam = " + findTeam.getName());
             System.out.println("----------------------------------------");
-            
+             */
+
+
+            Team team = new Team();
+            team.setName("HAHA");
+            entityManager.persist(team);
+
+            Member member = new Member();
+            member.setUserName("LeeChaeWon");
+            member.setTeam(team);
+            entityManager.persist(member);
+
+            entityManager.flush();
+            entityManager.clear();
+
+            Member findMember = entityManager.find(Member.class, member.getId());
+            List<Member> members = findMember.getTeam().getMembers();
+
+            System.out.println("----------------------------------------");
+            for (Member member1 : members) {
+                System.out.println("m = " + member1.getUserName());
+            }
+            System.out.println("----------------------------------------");
             transaction.commit();
 
         } catch (Exception e) {
