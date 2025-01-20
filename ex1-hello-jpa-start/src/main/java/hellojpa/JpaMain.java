@@ -212,6 +212,10 @@ public class JpaMain {
             entityManager.persist(member);
 
              */
+
+            /*
+            Proxy (EntityManager.find & getReference + getPersistenceUnitUtil
+
             Member member = new Member();
             member.setUserName("User1");
             entityManager.persist(member);
@@ -230,8 +234,26 @@ public class JpaMain {
             System.out.println("entityManagerFactory.getPersistenceUnitUtil().isLoaded(findmember) = " + entityManagerFactory.getPersistenceUnitUtil().isLoaded(findmember));
 
             Hibernate.initialize(findmember);
+             */
 
+            Team team = new Team();
+            team.setName("team1");
+            entityManager.persist(team);
 
+            Member member = new Member();
+            member.setUserName("member1");
+            member.setTeam(team);
+
+            entityManager.persist(member);
+
+            entityManager.flush();
+            entityManager.clear();
+
+            Member findMember = entityManager.find(Member.class, member.getId());
+
+            System.out.println("---------------------------------------------------");
+            System.out.println("findMember = " + findMember.getTeam().getClass());
+            System.out.println("---------------------------------------------------");
             transaction.commit();
 
         } catch (Exception e) {

@@ -17,7 +17,7 @@ public class Team extends BaseEntity {
 
     private String name;
 
-    @OneToMany(mappedBy = "team")
+    @OneToMany(mappedBy = "team", fetch = FetchType.LAZY)
     private List<Member> members = new ArrayList<>();
 
     public void addMember(Member member) {
