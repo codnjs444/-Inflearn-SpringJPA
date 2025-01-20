@@ -6,6 +6,7 @@ import org.hibernate.Hibernate;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Set;
 
 @Slf4j
 public class JpaMain {
@@ -287,6 +288,9 @@ public class JpaMain {
             entityManager.persist(member);
          */
 
+        /*
+        불변 객체 세팅
+
             Address address = new Address("city", "street", "10000");
             Address newAddress = new Address(address.getCity(), address.getStreet(), address.getZipcode());
 
@@ -299,7 +303,36 @@ public class JpaMain {
             member2.setUserName("member2");
             member2.setHomeAddress(newAddress);
             entityManager.persist(member2);
+         */
 
+            Member member = new Member();
+            member.setUserName("member1");
+            member.setHomeAddress(new Address("부산", "해운대", "3333"));
+            member.getFavoriteFoods().add("치킨");
+            member.getFavoriteFoods().add("피자");
+            member.getFavoriteFoods().add("족발");
+
+            member.getAddressHistory().add(new Address("old1", "street1", "1111"));
+            member.getAddressHistory().add(new Address("old2", "street2", "2222"));
+
+
+            entityManager.persist(member);
+
+            entityManager.flush();
+            entityManager.clear();
+
+            System.out.println("====================================================");
+            Member findMember = entityManager.find(Member.class, member.getId());
+
+            List<Address> addressHistory = findMember.getAddressHistory();
+            for (Address address : addressHistory) {
+                System.out.println("address = " + address.getCity());
+            }
+
+            Set<String> favoriteFoods = findMember.getFavoriteFoods();
+            for (String favoriteFood : favoriteFoods) {
+                System.out.println("favoriteFood = " + favoriteFood);
+            }
 
 
             transaction.commit();
