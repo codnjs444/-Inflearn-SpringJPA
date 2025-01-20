@@ -1,8 +1,6 @@
 package jpabook.jpashop.domain;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 public class Delivery {
@@ -15,4 +13,7 @@ public class Delivery {
     private String street;
     private String zipCode;
     private DeliveryStatus status;
+
+    @OneToOne(mappedBy = "delivery", fetch = FetchType.LAZY)
+    private Order order;
 }
