@@ -3,6 +3,9 @@ package hellojpa;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 @Entity
 @Data
@@ -23,6 +26,10 @@ public class Member {
     @OneToOne
     @JoinColumn(name = "LOCKER_ID")
     private Locker locker;
+
+    @OneToMany(mappedBy = "member")
+    private List<MemberProducts> memberProducts = new ArrayList<>();
+
 
 //    public void changeTeam(Team team) {
 //        this.team = team;
