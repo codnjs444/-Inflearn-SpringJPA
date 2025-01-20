@@ -257,6 +257,9 @@ public class JpaMain {
             System.out.println("---------------------------------------------------");
              */
 
+            /*
+            OrphanRemoval Test
+
             Parent parent = new Parent();
             Child child1 = new Child();
             Child child2 = new Child();
@@ -273,6 +276,13 @@ public class JpaMain {
             Parent findParent = entityManager.find(Parent.class, parent.getId());
             findParent.getChildList().remove(0);
             entityManager.remove(findParent);
+             */
+
+            Member member = new Member();
+            member.setUserName("hello");
+            member.setHomeAddress(new Address("city", "street", "zipcode"));
+
+            entityManager.persist(member);
 
             transaction.commit();
 

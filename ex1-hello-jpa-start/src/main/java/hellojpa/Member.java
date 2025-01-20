@@ -10,7 +10,7 @@ import java.util.List;
 
 @Entity
 @Data
-public class Member extends BaseEntity{
+public class Member{
 
     @Id
     @GeneratedValue
@@ -30,6 +30,15 @@ public class Member extends BaseEntity{
 
     @OneToMany(mappedBy = "member")
     private List<MemberProducts> memberProducts = new ArrayList<>();
+
+    @Embedded
+    private Period workPeriod;
+
+    @Embedded
+    private Address homeAddress;
+
+
+
 
 //    public void changeTeam(Team team) {
 //        this.team = team;
