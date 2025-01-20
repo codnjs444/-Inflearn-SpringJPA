@@ -3,6 +3,7 @@ package hellojpa;
 import jakarta.persistence.*;
 import lombok.extern.slf4j.Slf4j;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Slf4j
@@ -196,6 +197,16 @@ public class JpaMain {
             album.setPrice(10000);
 
             entityManager.persist(album);
+
+            entityManager.flush();
+            entityManager.clear();
+
+            Member member = new Member();
+            member.setUserName("user1");
+            member.setCreatedBy("kim");
+            member.setCreatedDate(LocalDateTime.now());
+
+            entityManager.persist(member);
             transaction.commit();
 
         } catch (Exception e) {

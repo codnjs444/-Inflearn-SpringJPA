@@ -3,13 +3,14 @@ package hellojpa;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
 
 @Entity
 @Data
-public class Member {
+public class Member extends BaseEntity{
 
     @Id
     @GeneratedValue
@@ -29,7 +30,6 @@ public class Member {
 
     @OneToMany(mappedBy = "member")
     private List<MemberProducts> memberProducts = new ArrayList<>();
-
 
 //    public void changeTeam(Team team) {
 //        this.team = team;
