@@ -176,6 +176,26 @@ public class JpaMain {
             transaction.commit();
              */
 
+            Movie movie = new Movie();
+            movie.setDirector("testDirector");
+            movie.setActor("testActor");
+            movie.setName("Star");
+            movie.setPrice(10000);
+
+            entityManager.persist(movie);
+
+            entityManager.flush();
+            entityManager.clear();
+
+            Movie findMovie = entityManager.find(Movie.class, movie.getId());
+            System.out.println("================================================");
+            System.out.println("findMovie = " + findMovie);
+
+            Album album = new Album();
+            album.setName("testAlbum");
+            album.setPrice(10000);
+
+            entityManager.persist(album);
             transaction.commit();
 
         } catch (Exception e) {
