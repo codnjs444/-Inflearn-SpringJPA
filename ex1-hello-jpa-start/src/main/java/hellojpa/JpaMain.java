@@ -2,6 +2,7 @@ package hellojpa;
 
 import jakarta.persistence.*;
 import lombok.extern.slf4j.Slf4j;
+import org.hibernate.Hibernate;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -177,6 +178,8 @@ public class JpaMain {
             transaction.commit();
              */
 
+            /*
+            상속 관계 매핑 Test
             Movie movie = new Movie();
             movie.setDirector("testDirector");
             movie.setActor("testActor");
@@ -207,6 +210,28 @@ public class JpaMain {
             member.setCreatedDate(LocalDateTime.now());
 
             entityManager.persist(member);
+
+             */
+            Member member = new Member();
+            member.setUserName("User1");
+            entityManager.persist(member);
+
+            entityManager.flush();
+            entityManager.clear();
+
+            Member findmember = entityManager.find(Member.class, member.getId());
+            System.out.println("findmember = " + findmember.getId());
+            System.out.println("findmember = " + findmember.getUserName());
+
+            Member reference = entityManager.getReference(Member.class, member.getId());
+            System.out.println("reference = " + reference);
+            System.out.println("reference = " + reference.getClass());
+
+            System.out.println("entityManagerFactory.getPersistenceUnitUtil().isLoaded(findmember) = " + entityManagerFactory.getPersistenceUnitUtil().isLoaded(findmember));
+
+            Hibernate.initialize(findmember);
+
+
             transaction.commit();
 
         } catch (Exception e) {
