@@ -2,10 +2,11 @@ package hellojpa;
 
 import jakarta.persistence.Embeddable;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Embeddable
-@Data
+@Getter
 @NoArgsConstructor
 public class Address {
     private String city;

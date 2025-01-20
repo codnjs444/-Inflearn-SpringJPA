@@ -278,11 +278,29 @@ public class JpaMain {
             entityManager.remove(findParent);
              */
 
+        /*
+        Embedded
             Member member = new Member();
             member.setUserName("hello");
             member.setHomeAddress(new Address("city", "street", "zipcode"));
 
             entityManager.persist(member);
+         */
+
+            Address address = new Address("city", "street", "10000");
+            Address newAddress = new Address(address.getCity(), address.getStreet(), address.getZipcode());
+
+            Member member = new Member();
+            member.setUserName("member1");
+            member.setHomeAddress(address);
+            entityManager.persist(member);
+
+            Member member2 = new Member();
+            member2.setUserName("member2");
+            member2.setHomeAddress(newAddress);
+            entityManager.persist(member2);
+
+
 
             transaction.commit();
 
