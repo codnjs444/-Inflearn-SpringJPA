@@ -1,0 +1,5 @@
+# Ignore all .class files
+*.class
+
+# Ignore compiled files in target directory
+/target/
