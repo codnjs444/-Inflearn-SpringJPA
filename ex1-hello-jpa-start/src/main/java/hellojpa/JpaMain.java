@@ -236,6 +236,7 @@ public class JpaMain {
             Hibernate.initialize(findmember);
              */
 
+            /*
             Team team = new Team();
             team.setName("team1");
             entityManager.persist(team);
@@ -254,6 +255,25 @@ public class JpaMain {
             System.out.println("---------------------------------------------------");
             System.out.println("findMember = " + findMember.getTeam().getClass());
             System.out.println("---------------------------------------------------");
+             */
+
+            Parent parent = new Parent();
+            Child child1 = new Child();
+            Child child2 = new Child();
+
+            parent.setName("sleep");
+            parent.addChild(child1);
+            parent.addChild(child2);
+
+            entityManager.persist(parent);
+
+            entityManager.flush();
+            entityManager.clear();
+
+            Parent findParent = entityManager.find(Parent.class, parent.getId());
+            findParent.getChildList().remove(0);
+            entityManager.remove(findParent);
+
             transaction.commit();
 
         } catch (Exception e) {
