@@ -19,6 +19,34 @@ public class JpaMain {
         transaction.begin();
 
         try {
+
+
+
+            transaction.commit(); // 트랜잭션 커밋;
+
+
+        } catch (Exception e) {
+            transaction.rollback();
+        }
+        entityManager.close();
+        entityManagerFactory.close();
+    }
+}
+
+            /* [jpql]
+            List<Member> result = entityManager.createQuery(
+                    "select m from Member m where m.userName like '%kim%'",
+                    Member.class
+            ).getResultList();
+
+            System.out.println("============================================");
+            for (Member member : result) {
+                System.out.println("member = " + member);
+            }
+            System.out.println("============================================");
+             */
+
+
             /*
             Insert 기능
 
@@ -305,6 +333,21 @@ public class JpaMain {
             entityManager.persist(member2);
          */
 
+            /* [ 값 타입 조회]
+            Member findMember = entityManager.find(Member.class, member.getId());
+
+            List<Address> addressHistory = findMember.getAddressHistory();
+            for (Address address : addressHistory) {
+                System.out.println("address = " + address.getCity());
+            }
+
+            Set<String> favoriteFoods = findMember.getFavoriteFoods();
+            for (String favoriteFood : favoriteFoods) {
+                System.out.println("favoriteFood = " + favoriteFood);
+            }
+             */
+
+            /* Entity 객체 Update / Delete
             Member member = new Member();
             member.setUserName("member1");
             member.setHomeAddress(new Address("부산", "해운대", "3333"));
@@ -332,27 +375,4 @@ public class JpaMain {
 
             findMember.getAddressHistory().remove(new Address("old1", "street1", "1111"));
             findMember.getAddressHistory().add(new Address("removeAndAdd", "street1", "1111"));
-
-            transaction.commit();
-
-        } catch (Exception e) {
-            transaction.rollback();
-        }
-        entityManager.close();
-        entityManagerFactory.close();
-    }
-}
-
-            /* [ 값 타입 조회]
-            Member findMember = entityManager.find(Member.class, member.getId());
-
-            List<Address> addressHistory = findMember.getAddressHistory();
-            for (Address address : addressHistory) {
-                System.out.println("address = " + address.getCity());
-            }
-
-            Set<String> favoriteFoods = findMember.getFavoriteFoods();
-            for (String favoriteFood : favoriteFoods) {
-                System.out.println("favoriteFood = " + favoriteFood);
-            }
              */

@@ -32,8 +32,8 @@ public class Member{
     @JoinColumn(name = "LOCKER_ID")
     private Locker locker;
 
-    @OneToMany(mappedBy = "member")
-    private List<MemberProducts> memberProducts = new ArrayList<>();
+//    @OneToMany(mappedBy = "member", fetch = FetchType.LAZY)
+//    private List<MemberProducts> memberProducts = new ArrayList<>();
 
     @Embedded
     private Period workPeriod;
@@ -41,17 +41,18 @@ public class Member{
     @Embedded
     private Address homeAddress;
 
-    @ElementCollection
+
+
+    /* [컬렉션 값 타입]
+    @ElementCollection(fetch = FetchType.LAZY)
     @CollectionTable(name = "FAVORITE_FOOD", joinColumns = @JoinColumn(name = "MEMBER_ID"))
     @Column(name = "FOOD_NAME")
     private Set<String> favoriteFoods = new HashSet<>();
 
-    @ElementCollection
+    @ElementCollection(fetch = FetchType.LAZY)
     @CollectionTable(name = "ADDRESS", joinColumns = @JoinColumn(name = "MEMBER_ID"))
     private List<Address> addressHistory = new ArrayList<>();
-
-
-
+     */
 
 //    public void changeTeam(Team team) {
 //        this.team = team;
