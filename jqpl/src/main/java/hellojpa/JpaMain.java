@@ -20,28 +20,25 @@ public class JpaMain {
         transaction.begin();
 
         try {
-            for (int i = 0; i < 100; i++) {
-                Member member = new Member();
-                member.setUsername("user" + i);
-                member.setAge(10 + i);
-                entityManager.persist(member);
-            }
+            Team team = new Team();
+            team.setName("teamA");
+            entityManager.persist(team);
 
-            List<Member> result = entityManager.createQuery("select m from Member m order by m.age desc", Member.class)
-                    .setFirstResult(0)
-                    .setMaxResults(10)
+            Member member = new Member();
+            member.setUsername("member1");
+            member.setAge(10);
+
+            member.setTeam(team);
+            entityManager.persist(member);
+
+            entityManager.flush();
+            entityManager.clear();
+
+            String query = "select m from Member m left join m.Team t on m.username = t.name";
+            List<Member> result = entityManager.createQuery(query, Member.class)
                     .getResultList();
 
-            System.out.println("result.size = " + result.size());
-            for (Member member1 : result) {
-                System.out.println("member1 = " + member1);
-            }
-
-
-
-
-
-
+            System.out.println("result = " + result);
             transaction.commit();
         } catch (Exception e) {
             transaction.rollback();
@@ -73,4 +70,23 @@ public class JpaMain {
 //            Object[] results = result.get(0);
 //            System.out.println("results = " + results[0]);
 //            System.out.println("results = " + results[1]);
+ */
+
+/* [페이징]
+            for (int i = 0; i < 100; i++) {
+                Member member = new Member();
+                member.setUsername("user" + i);
+                member.setAge(10 + i);
+                entityManager.persist(member);
+            }
+
+            List<Member> result = entityManager.createQuery("select m from Member m order by m.age desc", Member.class)
+                    .setFirstResult(0)
+                    .setMaxResults(10)
+                    .getResultList();
+
+            System.out.println("result.size = " + result.size());
+            for (Member member1 : result) {
+                System.out.println("member1 = " + member1);
+            }
  */

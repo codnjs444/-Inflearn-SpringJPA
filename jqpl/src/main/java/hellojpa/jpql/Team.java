@@ -15,7 +15,7 @@ public class Team {
     @Column(name = "TEAM_ID")
     private Long id;
 
-    private String username;
+    private String name;
 
     private int age;
 
