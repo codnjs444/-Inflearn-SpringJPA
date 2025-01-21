@@ -2,6 +2,7 @@ package hellojpa;
 
 
 import hellojpa.jpql.Member;
+import hellojpa.jpql.MemberDTO;
 import hellojpa.jpql.Team;
 import jakarta.persistence.*;
 import lombok.extern.slf4j.Slf4j;
@@ -28,6 +29,21 @@ public class JpaMain {
                     .setParameter("username", "user1")
                     .getSingleResult();
             System.out.println("singleResult = " + singleResult);
+
+//            List<Object[]> result = entityManager.createQuery("select m.username, m.age from Member m")
+//                    .getResultList();
+
+            List<MemberDTO> result = entityManager.createQuery("select new hellojpa.jpql.MemberDTO(m.username, m.age) from Member m", MemberDTO.class)
+                    .getResultList();
+
+            entityManager.createQuery("select m.username, m.age from Member m", Member.class);
+
+            MemberDTO memberDTO = result.get(0);
+            System.out.println("memberDTO = " + memberDTO);
+
+//            Object[] results = result.get(0);
+//            System.out.println("results = " + results[0]);
+//            System.out.println("results = " + results[1]);
 
 
             transaction.commit();
