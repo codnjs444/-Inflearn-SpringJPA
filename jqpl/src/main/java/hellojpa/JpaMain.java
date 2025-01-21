@@ -1,8 +1,8 @@
 package hellojpa;
 
 
+
 import hellojpa.jpql.Member;
-import hellojpa.jpql.MemberDTO;
 import hellojpa.jpql.Team;
 import jakarta.persistence.*;
 import lombok.extern.slf4j.Slf4j;
@@ -34,7 +34,7 @@ public class JpaMain {
             entityManager.flush();
             entityManager.clear();
 
-            String query = "select m from Member m left join m.Team t on m.username = t.name";
+            String query = "select m.username, 'HELLO', TRUE from Member m";
             List<Member> result = entityManager.createQuery(query, Member.class)
                     .getResultList();
 

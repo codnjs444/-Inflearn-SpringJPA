@@ -25,6 +25,9 @@ public class Member {
     @JoinColumn(name = "TEAM_ID")
     private Team team;
 
+    @Enumerated(EnumType.STRING)
+    private MemberType memberType;
+
     @Override
     public String toString() {
         return "Member{" +
