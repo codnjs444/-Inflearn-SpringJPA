@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d9288d07-55fb-4bb1-9cd0-ec1bda10b2c0" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../ex1-hello-jpa-start/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ex1-hello-jpa-start/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ex1-hello-jpa-start/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ex1-hello-jpa-start/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ex1-hello-jpa-start/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ex1-hello-jpa-start/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ex1-hello-jpa-start/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ex1-hello-jpa-start/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ex1-hello-jpa-start/src/main/java/hellojpa/Address.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ex1-hello-jpa-start/src/main/java/hellojpa/Album.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ex1-hello-jpa-start/src/main/java/hellojpa/BaseEntity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ex1-hello-jpa-start/src/main/java/hellojpa/Book.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ex1-hello-jpa-start/src/main/java/hellojpa/Child.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ex1-hello-jpa-start/src/main/java/hellojpa/Item.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ex1-hello-jpa-start/src/main/java/hellojpa/JpaMain.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ex1-hello-jpa-start/src/main/java/hellojpa/Locker.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ex1-hello-jpa-start/src/main/java/hellojpa/Member.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ex1-hello-jpa-start/src/main/java/hellojpa/MemberProducts.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ex1-hello-jpa-start/src/main/java/hellojpa/Movie.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ex1-hello-jpa-start/src/main/java/hellojpa/Parent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ex1-hello-jpa-start/src/main/java/hellojpa/Period.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ex1-hello-jpa-start/src/main/java/hellojpa/Product.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ex1-hello-jpa-start/src/main/java/hellojpa/RoleType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ex1-hello-jpa-start/src/main/java/hellojpa/Team.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ex1-hello-jpa-start/src/main/java/hellojpa/ValueMain.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ex1-hello-jpa-start/src/main/resources/META-INF/persistence.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ex1-hello-jpa-start/src/main/resources/logback.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ex1-hello-jpa-start/target/classes/META-INF/persistence.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ex1-hello-jpa-start/target/classes/hellojpa/Album.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ex1-hello-jpa-start/target/classes/hellojpa/Book.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ex1-hello-jpa-start/target/classes/hellojpa/Item.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ex1-hello-jpa-start/target/classes/hellojpa/JpaMain.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ex1-hello-jpa-start/target/classes/hellojpa/Locker.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ex1-hello-jpa-start/target/classes/hellojpa/Member.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ex1-hello-jpa-start/target/classes/hellojpa/MemberProducts.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ex1-hello-jpa-start/target/classes/hellojpa/Movie.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ex1-hello-jpa-start/target/classes/hellojpa/Product.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ex1-hello-jpa-start/target/classes/hellojpa/RoleType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ex1-hello-jpa-start/target/classes/hellojpa/Team.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ex1-hello-jpa-start/target/classes/logback.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ex1-hello-jpa-start/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ex1-hello-jpa-start/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jpabook/.idea/jpabook.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jpabook/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jpabook/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jpabook/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jpabook/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jpabook/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jpabook/jpashop/JpaMain.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jpabook/jpashop/domain/Address.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jpabook/jpashop/domain/Album.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jpabook/jpashop/domain/BaseEntity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jpabook/jpashop/domain/Book.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jpabook/jpashop/domain/Category.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jpabook/jpashop/domain/Delivery.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jpabook/jpashop/domain/DeliveryStatus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jpabook/jpashop/domain/Item.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jpabook/jpashop/domain/Member.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jpabook/jpashop/domain/Movie.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jpabook/jpashop/domain/Order.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jpabook/jpashop/domain/OrderItem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jpabook/jpashop/domain/OrderStatus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jqpl/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jqpl/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jqpl/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jqpl/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jqpl/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jqpl/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jqpl/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jqpl/src/main/java/hellojpa/JpaMain.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jqpl/src/main/java/hellojpa/jpql/Address.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jqpl/src/main/java/hellojpa/jpql/Member.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jqpl/src/main/java/hellojpa/jpql/MemberDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jqpl/src/main/java/hellojpa/jpql/MemberType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jqpl/src/main/java/hellojpa/jpql/Order.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jqpl/src/main/java/hellojpa/jpql/Product.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jqpl/src/main/java/hellojpa/jpql/Team.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jqpl/src/main/resources/META-INF/persistence.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jqpl/src/main/resources/logback.xml" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2reewSovB3SCGhRQ2V0lcHHItCF" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+    <option name="sortKey" value="BY_TIME_ASCENDING" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.JpaMain.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.jpashop [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.jpashop [install].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/user/git/개인 학습/-Inflearn-SpringJPA/jpashop/src/main/resources&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.annotationProcessors&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="jpabook.jpashop.domain" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\user\git\개인 학습\-Inflearn-SpringJPA\jpashop\src\main\resources" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="jpabook.jpashop.domain" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application">
+      <option name="ALTERNATIVE_JRE_PATH" value="corretto-17" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="jpabook.jpashop.JpaMain" />
+      <module name="jpashop" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d9288d07-55fb-4bb1-9cd0-ec1bda10b2c0" name="Changes" comment="" />
+      <created>1736924207672</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1736924207672</updated>
+    </task>
+    <servers />
+  </component>
+</project>
