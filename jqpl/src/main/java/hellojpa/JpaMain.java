@@ -20,11 +20,40 @@ public class JpaMain {
         transaction.begin();
 
         try {
-            Member member = new Member();
-            member.setUsername("user1");
-            member.setAge(10);
-            entityManager.persist(member);
+            for (int i = 0; i < 100; i++) {
+                Member member = new Member();
+                member.setUsername("user" + i);
+                member.setAge(10 + i);
+                entityManager.persist(member);
+            }
 
+            List<Member> result = entityManager.createQuery("select m from Member m order by m.age desc", Member.class)
+                    .setFirstResult(0)
+                    .setMaxResults(10)
+                    .getResultList();
+
+            System.out.println("result.size = " + result.size());
+            for (Member member1 : result) {
+                System.out.println("member1 = " + member1);
+            }
+
+
+
+
+
+
+            transaction.commit();
+        } catch (Exception e) {
+            transaction.rollback();
+            e.printStackTrace();
+        }
+        entityManager.close();
+        entityManagerFactory.close();
+    }
+}
+
+
+/* [트랜잭션]
             Member singleResult = entityManager.createQuery("select m from Member m where m.username = :username", Member.class)
                     .setParameter("username", "user1")
                     .getSingleResult();
@@ -44,14 +73,4 @@ public class JpaMain {
 //            Object[] results = result.get(0);
 //            System.out.println("results = " + results[0]);
 //            System.out.println("results = " + results[1]);
-
-
-            transaction.commit();
-        } catch (Exception e) {
-            transaction.rollback();
-            e.printStackTrace();
-        }
-        entityManager.close();
-        entityManagerFactory.close();
-    }
-}
+ */
