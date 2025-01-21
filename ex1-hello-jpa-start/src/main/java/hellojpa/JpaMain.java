@@ -322,6 +322,28 @@ public class JpaMain {
             entityManager.clear();
 
             System.out.println("====================================================");
+
+            Member findMember = entityManager.find(Member.class, member.getId());
+            Address a = findMember.getHomeAddress();
+            findMember.setHomeAddress(new Address("newCity", a.getStreet(),a.getZipcode()));
+
+            findMember.getFavoriteFoods().remove("치킨");
+            findMember.getFavoriteFoods().add("한식");
+
+            findMember.getAddressHistory().remove(new Address("old1", "street1", "1111"));
+            findMember.getAddressHistory().add(new Address("removeAndAdd", "street1", "1111"));
+
+            transaction.commit();
+
+        } catch (Exception e) {
+            transaction.rollback();
+        }
+        entityManager.close();
+        entityManagerFactory.close();
+    }
+}
+
+            /* [ 값 타입 조회]
             Member findMember = entityManager.find(Member.class, member.getId());
 
             List<Address> addressHistory = findMember.getAddressHistory();
@@ -333,19 +355,4 @@ public class JpaMain {
             for (String favoriteFood : favoriteFoods) {
                 System.out.println("favoriteFood = " + favoriteFood);
             }
-
-
-            transaction.commit();
-
-        } catch (Exception e) {
-            transaction.rollback();
-        }
-
-
-
-
-        entityManager.close();
-
-        entityManagerFactory.close();
-    }
-}
+             */
