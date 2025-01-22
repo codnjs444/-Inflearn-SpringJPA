@@ -7,7 +7,10 @@ import jpabook.jpashop.domain.Order;
 import jpabook.jpashop.domain.OrderStatus;
 import jpabook.jpashop.domain.item.Book;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
+import jpabook.jpashop.domain.item.Item;
+import jpabook.jpashop.exception.NotEnoughStockException;
 import jpabook.jpashop.repository.OrderRepository;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -35,16 +38,9 @@ class OrderServiceTest {
     @Test
     public void 상품주문() throws Exception {
         // given
-        Member member = new Member();
-        member.setName("회원1");
-        member.setAddress(new Address("서울", "떙로", "123-321"));
-        em.persist(member);
+        Member member = createMember();
 
-        Book book = new Book();
-        book.setName("Book1");
-        book.setPrice(1000);
-        book.setStockQuantity(10);
-        em.persist(book);
+        Item book = createBook("Book1", 1000, 10);
 
         int orderCount = 3;
 
@@ -63,20 +59,54 @@ class OrderServiceTest {
     }
 
     @Test
-    public void 주문취소() throws Exception {
+    public void 상품주문_재고수량초과() throws Exception {
         // given
+        Member member = createMember();
+        Item item = createBook("Book1", 10000, 10);
 
-        // when
+        int orderCount = 11;
 
-        // then
+        // when & then
+        assertThrows(NotEnoughStockException.class, () -> {
+            orderService.order(member.getId(), item.getId(), orderCount);
+        });
     }
 
     @Test
-    public void 상품주문_재고수량초과() throws Exception {
+    public void 주문취소() throws Exception {
         // given
+        Member member = createMember();
+        Item book = createBook("Book1", 10000, 10);
 
+        int orderCount = 2;
+
+        Long orderId = orderService.order(member.getId(), book.getId(), orderCount);
         // when
+        orderService.cancleOrder(orderId);
 
         // then
+        Order getOrder = orderRepository.findOne(orderId);
+
+        assertEquals(OrderStatus.CANCEL, getOrder.getStatus(), "주문 취소시 상태는 CANCLE 이다.");
     }
+
+    private Member createMember() {
+        Member member = new Member();
+        member.setName("회원1");
+        member.setAddress(new Address("서울", "떙로", "123-321"));
+        em.persist(member);
+        return member;
+    }
+
+    private Item createBook(String name, int price, int stockQuantity) {
+        Book book = new Book();
+        book.setName(name);
+        book.setPrice(price);
+        book.setStockQuantity(stockQuantity);
+        em.persist(book);
+        return book;
+    }
+
+
+
 }
