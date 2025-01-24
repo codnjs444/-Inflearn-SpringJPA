@@ -46,6 +46,9 @@ dependencies {
 	// PostgreSQL
 	runtimeOnly 'org.postgresql:postgresql'
 
+	// Validation
+	implementation 'javax.validation:validation-api:2.0.1.Final'
+
 	// 테스트 환경 구성
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
