@@ -1,6 +1,8 @@
 package jpabook.jpashop.domain;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -17,6 +19,7 @@ public class Member {
     @Column
     private Long id;
 
+    @NotEmpty(message = "회원 이름은 필수입니다.")
     private String name;
 
     @Embedded

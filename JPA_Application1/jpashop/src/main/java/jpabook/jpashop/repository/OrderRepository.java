@@ -34,5 +34,29 @@ public class OrderRepository {
     }
 
     public List<Order> findAllByString(OrderSearch orderSearch) {
+        // 기본 JPQL 문
+        String jpql = "select o from Order o join o.member m where 1=1";
+
+        // 동적 쿼리 생성
+        if (orderSearch.getOrderStatus() != null) {
+            jpql += " and o.status = :status";
+        }
+        if (orderSearch.getMemberName() != null && !orderSearch.getMemberName().isEmpty()) {
+            jpql += " and m.name like :name";
+        }
+
+        var query = em.createQuery(jpql, Order.class);
+
+        // 파라미터 설정
+        if (orderSearch.getOrderStatus() != null) {
+            query.setParameter("status", orderSearch.getOrderStatus());
+        }
+        if (orderSearch.getMemberName() != null && !orderSearch.getMemberName().isEmpty()) {
+            query.setParameter("name", "%" + orderSearch.getMemberName() + "%"); // 부분 일치 검색
+        }
+
+        return query.setMaxResults(1000) // 최대 1000개 조회 제한
+                .getResultList();
     }
+
 }
