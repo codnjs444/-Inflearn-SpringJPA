@@ -33,4 +33,6 @@ public class OrderRepository {
                 .getResultList();
     }
 
+    public List<Order> findAllByString(OrderSearch orderSearch) {
+    }
 }
