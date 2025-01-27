@@ -46,6 +46,8 @@ dependencies {
 	// PostgreSQL
 	runtimeOnly 'org.postgresql:postgresql'
 
+	implementation 'com.fasterxml.jackson.datatype:jackson-datatype-hibernate5'
+
 	// Validation
 	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-validation', version: '3.3.3'
 
