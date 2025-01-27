@@ -37,7 +37,7 @@ public class MemberApiController {
         private T data;
     }
 
-    @Data
+    @Data 
     @AllArgsConstructor
     static class MemberDto {
         private String name;
