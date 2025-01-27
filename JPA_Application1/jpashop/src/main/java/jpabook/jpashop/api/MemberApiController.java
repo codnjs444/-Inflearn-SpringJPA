@@ -2,6 +2,7 @@ package jpabook.jpashop.api;
 
 import jakarta.validation.Valid;
 import jpabook.jpashop.domain.Member;
+import jpabook.jpashop.repository.order.simplequery.OrderSimpleQueryRepository;
 import jpabook.jpashop.service.MemberService;
 import lombok.AllArgsConstructor;
 import lombok.Data;
