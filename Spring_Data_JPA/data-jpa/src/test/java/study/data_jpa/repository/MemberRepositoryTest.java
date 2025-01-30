@@ -140,4 +140,16 @@ class MemberRepositoryTest {
         }
     }
 
+    @Transactional
+    @Test
+    public void returnType() {
+        Member m1 = new Member("AAA", 10);
+        Member m2 = new Member("BBB", 20);
+
+        memberJpaRepository.save(m1);
+        memberJpaRepository.save(m2);
+
+        List<Member> aaa = memberRepository.findListByUsername("AAA");
+        System.out.println("aaa = " + aaa);
+    }
 }
