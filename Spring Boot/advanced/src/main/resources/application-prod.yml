@@ -1,0 +1,6 @@
+# application-prod.yml
+app:
+  profile: prod
+  message: "Hello from PROD"
+server:
+  port: 8082

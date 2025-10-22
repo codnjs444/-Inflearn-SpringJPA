@@ -1,0 +1,8 @@
+# application.yml (공통)
+spring:
+  application:
+    name: profile-lab
+app:
+  name: Profile Lab
+  profile: common
+  message: "Hello from COMMON"

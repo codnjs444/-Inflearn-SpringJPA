@@ -1,0 +1,6 @@
+# application-dev.yml
+app:
+  profile: dev
+  message: "Hello from DEV"
+server:
+  port: 8081
